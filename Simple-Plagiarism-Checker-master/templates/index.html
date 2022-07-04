@@ -1,0 +1,106 @@
+<html>
+   <style>
+      body {
+         background-image: url({{url_for('static', filename='image.jpg')}});
+        background-size : cover;
+        background-attachment:fixed;
+        background-repeat : no-repeat;
+        padding: 10px; display: grid;
+        align-items: center;
+        
+}
+      header {
+        height: 180px;
+        font-family: arial;
+        /*background: linear-gradient(145deg, #3931f4, #8874fc,#5a26ff);*/
+     
+        background-size : cover;
+        background-repeat : no-repeat;
+        background-position : center;
+        color: var(--standard-white);
+        padding: 10px; display: grid;
+        align-items: center;
+        box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 60%);
+        font-family:'Times New Roman', Times, serif;font-size:18;
+    }
+    header .material-icons {
+        font-size: 32px;
+        color: white;
+    }
+    header span {
+        font: 48px arial;
+        text-shadow: 3px 3px rgba(253, 253, 253, 0.5);
+    }
+    header a {
+        color: #f0e9e9; font-size: 32px; padding-right: 10px;
+    }
+    header a:hover {
+        color: #c2c2f3;
+    }
+   
+      @media only screen and (min-width: 920px){
+        .container {
+            width: 800px;
+        }
+    }
+    @media only screen and (min-width: 548px) and (max-width: 920px){
+        header span {
+            font: 40px arial;
+        }
+        .container {
+            width: 90%;
+        }
+        .editor-toolbar button {
+            background-size: 16px;
+            padding: 10px 20px;
+        }
+        .container {
+            width: 95%;
+        }
+        .page-container h2 {
+            font-size: 20px;
+        }
+        .page-container p {
+            font-size: 16px;
+        }
+        .editor-toolbar .flex-layout {
+            margin: auto;
+        }
+        .editor-toolbar button {
+            font-size: 16px;
+            padding: 10px 30px;
+        }
+        .container .editor-toolbar select {
+            display: none;
+            padding: 2px ​8px 2px 3px;
+        }
+</style>
+   
+   <body >
+     
+      <title>PLAG CHECKER</title>
+      <form action="http://localhost:5000" method="POST">
+   
+        
+         <header>
+      <center>
+           <h1>PLAGARISM CHECKER </h1><br><br>
+        </center>
+
+    </header><br><br><br><br>
+         <center><div class="page-container">
+            <h3>Plagarism Similarity detector- about the project</h3>
+            <p> ***Here in this project we can check the similarity rate between two given text documents.You can type the text/insert the text document inside the box and click <B>Process</B> button to find the similarity of the text documents and <B>Clear All</B> button to clear text you have entered..***
+            </p></center>   
+            <br><br>
+        </div>
+         <center><p>Input Text : </p><br>
+         <p><textarea name="query" rows="20" cols="100" autofocus>{{query}}</textarea>
+         </p></center>
+         <br><br>
+         <p><center><input type="submit" name="submit" value="CHECK PLAGIARISM" rows="5" cols="8"></center></p>
+         <br>
+         <p><h3>{{output}}</h3></p>
+      </form>
+   </body>
+</html>
